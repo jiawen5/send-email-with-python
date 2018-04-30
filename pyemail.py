@@ -5,7 +5,7 @@ from smtplib import SMTP_SSL
 
 host_server = 'smtp.163.com'
 sender = 'xxx@163.com'
-pwd = 'xxx'
+authcode = 'xxx'
 # theoretically, it's viable to send to other email accounts
 # but it's likely to be intercepted by spam filters
 # only sending to yourself is always okay
@@ -17,7 +17,7 @@ mail_content = "send email with python"
 smtp = SMTP_SSL(host_server)
 smtp.set_debuglevel(0)
 smtp.ehlo(host_server)
-smtp.login(sender, pwd)
+smtp.login(sender, authcode)
 
 msg = MIMEText(mail_content, 'plain', 'utf-8')
 msg["Subject"] = Header(mail_title, 'utf-8')
