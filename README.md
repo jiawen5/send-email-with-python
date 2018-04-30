@@ -1,8 +1,8 @@
 # send-email-with-python
 
-##usage
+## usage
 config your email account and password, then
-python pyemail.py
+  python pyemail.py
 
 include this line to send email notification to yourself when your program finished running
-os.system('python pyemail.py')
+```os.system('python pyemail.py')```
