@@ -1,7 +1,7 @@
 # send-email-with-python
 
 ## Usage
-config your email account and password, then
+config your email account and authorization code, then
 
 ```sh
 python pyemail.py
