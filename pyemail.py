@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 from email.header import Header
 from smtplib import SMTP_SSL
 
-host_server = 'smtp.163.com'
+host_server = 'smtp.163.com' #smtp.qq.com works too
 sender = 'xxx@163.com'
 authcode = 'xxx'
 # theoretically, it's viable to send to other email accounts
