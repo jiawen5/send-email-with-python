@@ -3,22 +3,16 @@ from email.mime.text import MIMEText
 from email.header import Header
 from smtplib import SMTP_SSL
 
-account='163'
-if account == 'qq':
-	host_server = 'smtp.qq.com'
-	sender = '814961058@qq.com'
-	pwd = 'aoyxasgtwqzzbbja'
-elif account == '163':
-	host_server = 'smtp.163.com'
-	sender = 'jiawenfive@163.com'
-	pwd = 'edcyhnvg6mko'
+host_server = 'smtp.163.com'
+sender = 'xxx@163.com'
+pwd = 'xxx'
+# theoretically, it's viable to send to other email accounts
+# but it's likely to be intercepted by spam filters
+# only sending to yourself is always okay
+receivers = sender
 
-mail_list = ['814961058@qq.com', 'jiawenfive@163.com', 'jiawenfive@yahoo.com']
-receivers = sender # mail_list[1] 
-
-mail_title = 'bootcamp program ended'
-mail_content = "bootcamp program ended"
-
+mail_title = 'send email with python'
+mail_content = "send email with python"
 
 smtp = SMTP_SSL(host_server)
 smtp.set_debuglevel(0)
@@ -27,8 +21,8 @@ smtp.login(sender, pwd)
 
 msg = MIMEText(mail_content, 'plain', 'utf-8')
 msg["Subject"] = Header(mail_title, 'utf-8')
-msg["From"] = sender  # Header("python_script", 'utf-8')
-msg["To"] = sender #Header("self", 'utf-8')
+msg["From"] = sender  # Header("test email", 'utf-8')
+msg["To"] = sender #Header("test email", 'utf-8')
 
 smtp.sendmail(sender, receivers, msg.as_string())
 smtp.quit()
